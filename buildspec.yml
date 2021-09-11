@@ -23,3 +23,4 @@ phases:
 artifacts:
    files:
       - deployment_package.zip
+      - template.yaml
