@@ -5,9 +5,9 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      Runtime: python3.x
+      Runtime: python3.7
       # CodeUri: codebuild-ap-east-1-github-to-lambda/test-build/deployment_package.zip
-      # CodeUri: ./
-      CodeUri: /template
+      CodeUri: ./
+      
     
     
