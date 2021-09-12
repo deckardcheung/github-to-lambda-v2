@@ -7,7 +7,7 @@ Resources:
        Properties:
           Handler: index.handler
           Runtime: python3.x
-          CodeUri: codebuild-ap-east-1-github-to-lambda/github-to-lambda-v2/deployment_package.zip
+          CodeUri: codepipeline-ap-east-1-403211953735/github-to-lambda-v2/deployment_package.zip
           # CodeUri: ./
       
     
