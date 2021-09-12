@@ -6,7 +6,7 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: python3.x
-      # CodeUri: codebuild-ap-east-1-github-to-lambda/test-build/deployment_package.zip
-      CodeUri: ./
+      CodeUri: codebuild-ap-east-1-github-to-lambda/test-build/deployment_package.zip
+      # CodeUri: ./
     
     
