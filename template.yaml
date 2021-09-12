@@ -2,12 +2,13 @@ AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Description: Lambda test with python
 Resources:
-    Type: AWS::Serverless::Function
-    Properties:
-      Handler: index.handler
-      Runtime: python3.7
-      # CodeUri: codebuild-ap-east-1-github-to-lambda/test-build/deployment_package.zip
-      CodeUri: ./
+   MyFunction:
+       Type: 'AWS::Serverless::Function'
+       Properties:
+          Handler: index.handler
+          Runtime: python3.x
+          # CodeUri: codebuild-ap-east-1-github-to-lambda/test-build/deployment_package.zip
+          CodeUri: ./
       
     
     
