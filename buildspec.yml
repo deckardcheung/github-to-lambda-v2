@@ -23,10 +23,8 @@ phases:
 
 
 artifacts:
-   files:
-      - deployment_package.zip
-      #- outputtemplate.yaml
-type: zip
-   files:
-      - template.yaml
+   type: zip
+      files:
+         - deployment_package.zip
+         - template.yaml
    
