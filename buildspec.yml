@@ -14,8 +14,8 @@ phases:
       - zip -r9 ../deployment_package.zip .
       - cd ..
       - zip -g deployment_package.zip lambda_function.py
-      #- export BUCKET=codebuild-ap-east-1-github-to-lambda
-      #- aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file outputtemplate.yaml
+      - export BUCKET=codebuild-ap-east-1-github-to-lambda
+      - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file outputtemplate.yaml
   post_build:
     commands:
       - echo "No post build"
@@ -23,8 +23,7 @@ phases:
 
 
 artifacts:
-   type: zip
    files:
       - deployment_package.zip
-      - template.yaml
+      - outputtemplate.zip
    
