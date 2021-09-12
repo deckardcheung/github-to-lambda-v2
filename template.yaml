@@ -1,9 +1,9 @@
-AWSTemplateFormatVersion: '2010-09-09'
-Transform: 'AWS::Serverless-2016-10-31'
-Description: 'Lambda test with python'
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: "AWS::Serverless-2016-10-31"
+Description: Lambda test with python
 Resources:
    MyFunction:
-       Type: 'AWS::Serverless::Function'
+       Type: "AWS::Serverless::Function"
        Properties:
           Handler: index.handler
           Runtime: python3.x
