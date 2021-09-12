@@ -26,9 +26,7 @@ artifacts:
    files:
       - deployment_package.zip
       #- outputtemplate.yaml
-   secondary-artifacts:
-      artifact1:
-         type: zip
-         files:
-            - template.yaml
+type: zip
+   files:
+      - template.yaml
    
