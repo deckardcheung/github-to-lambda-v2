@@ -1,14 +1,13 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Transform: "AWS::Serverless-2016-10-31"
-Description: Lambda test with python
+Description: Showing grid data by Pandas
 Resources:
-   MyFunction:
-       Type: "AWS::Serverless::Function"
-       Properties:
-          Handler: index.handler
-          Runtime: python3.x
-          CodeUri: codepipeline-ap-east-1-403211953735/github-to-lambda-v2/deployment_package.zip
-          # CodeUri: ./
+   MyPandasFunction:
+      Type: "AWS::Serverless::Function"
+      Properties:
+         Handler: lambda_function.lambda_handler
+         Runtime: python3.8
+         CodeUri: ./
       
     
     
