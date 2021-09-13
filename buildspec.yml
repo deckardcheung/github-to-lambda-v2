@@ -3,14 +3,13 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: latest
+      python: 3.8
     
   build:
     commands:
       - echo "build..."
       - echo "Installing dependencies..."
-      - pip install -r software.txt -t .
-      # -t. = install in the current directory
+      - pip install -r software.txt -t # -t . = install in the current directory
       - echo "Generate packagedtemplate.yaml and upload deployment package to S3 bucket"
       - export BUCKET=codebuild-ap-east-1-github-to-lambda-v2-deployment-package
       - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file packagedtemplate.yaml
