@@ -4,26 +4,21 @@ phases:
   install:
     runtime-versions:
       python: latest
-    commands:
-      - echo "Installing dependencies..."
-      - pip install -r software.txt -t lib
+    
   build:
     commands:
-      - echo "Zipping deployment package..."
-      - cd lib
-      - zip -r9 ../deployment_package.zip .
-      - cd ..
-      - zip -g deployment_package.zip lambda_function.py
-      #- export BUCKET=codebuild-ap-east-1-github-to-lambda
-      #- aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file packagedtemplate.yaml
+      - echo "build..."
+      - echo "Installing dependencies..."
+      - pip install -r software.txt -t lib
+      - echo "Generate packagedtemplate.yaml and upload deployment package to S3 bucket"
+      - export BUCKET=codebuild-ap-east-1-github-to-lambda-v2-deployment-package
+      - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file packagedtemplate.yaml
+
   post_build:
     commands:
       - echo "No post build"
-      - echo "DONE!!"
-
 
 artifacts:
    files:
-      - deployment_package.zip
       - template.yaml
-   
+      - packagedtemplate.yaml
